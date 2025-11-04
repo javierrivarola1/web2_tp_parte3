@@ -14,3 +14,17 @@ Se trata de una API REST pública que brinda integración con otros sistemas a t
    <li> La utenticación de token está implementada en los servicios para modificaciones de datos (POST, PUT).
 </li>  
 </ul>
+
+##Funcionalidades
+
+###Acceso Público
+<ul>
+  <li></li>
+  <li></li>
+</ul>
+
+###Acceso Administrador
+<ul>
+  <li></li>
+  <li></li>
+</ul>
