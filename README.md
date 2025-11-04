@@ -13,7 +13,7 @@ Proyecto creado para la cátedra de Web2, Facultad UNICEN, carrera TUDAI.
 ## 🧠 Tematica:
 Ecommerce especializado en perfumes de nicho y marcas reconocidas, orientado a ofrecer experiencias olfativas únicas para todos los géneros: masculinos, femeninos y unisex.
 
-## ✅ Descripción del Proyecto
+## 📋 Descripción del Proyecto
 Se trata de una API REST pública que brinda integración con otros sistemas a través de varios servicios, utilizando una base de datos compartida con el trabajo anterior. Esta API se construyó para ser RESTfull y cumple con varios requisitos funcionales y no funcionales.
 
 ## ✅ Requerimientos funcionales
