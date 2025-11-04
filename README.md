@@ -17,13 +17,13 @@ Se trata de una API REST pública que brinda integración con otros sistemas a t
 
 ##Funcionalidades
 
-###Acceso Público
+##Acceso Público
 <ul>
   <li></li>
   <li></li>
 </ul>
 
-###Acceso Administrador
+##Acceso Administrador
 <ul>
   <li></li>
   <li></li>
