@@ -15,9 +15,9 @@ Se trata de una API REST pública que brinda integración con otros sistemas a t
 </li>  
 </ul>
 
-##Funcionalidades
+### Funcionalidades
 
-##Acceso Público
+### Acceso Público
 <ul>
   <li></li>
   <li></li>
