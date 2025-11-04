@@ -2,7 +2,7 @@
 
 Se trata de una API REST pública que brinda integración con otros sistemas a través de varios servicios, utilizando una base de datos compartida con el trabajo anterior. Esta API se construyó para ser RESTfull y cumple con varios requisitos funcionales y no funcionales.
 
-## Requirimientos funcionales.
+## Requirimientos funcionales
 
 <ul>
   <li>La API ofrece servicios para listar, agregar y modificar datos de una base de datos.
