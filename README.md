@@ -1,4 +1,4 @@
-# WEB-II-Trabajo-Práctico - Ecommerce Perfumes.
+# WEB-II-Trabajo-Práctico - Ecommerce Perfumes - PARTE 3
 Proyecto creado para la cátedra de Web2, Facultad UNICEN, carrera TUDAI.
 
 ## 📋 Numero de grupo: 
@@ -13,36 +13,35 @@ Proyecto creado para la cátedra de Web2, Facultad UNICEN, carrera TUDAI.
 ## 🧠 Tematica:
 Ecommerce especializado en perfumes de nicho y marcas reconocidas, orientado a ofrecer experiencias olfativas únicas para todos los géneros: masculinos, femeninos y unisex.
 
-## ✅ Diagrama de entidad relación (DER)
-Las entidades principales de la base de datos son productos y marcas . Para cada una se construyó una tabla con sus respectivos atributos.
+## ✅ Descripción del Proyecto
+Se trata de una API REST pública que brinda integración con otros sistemas a través de varios servicios, utilizando una base de datos compartida con el trabajo anterior. Esta API se construyó para ser RESTfull y cumple con varios requisitos funcionales y no funcionales.
+
+## ✅ Requerimientos funcionales
 
 <ul>
-<li><strong>Tabla productos</strong>: Contiene información sobre las caracteristicas de los perfumes.</li>
-<li><strong>Tabla marca</strong>: Almacena información sobre la marca de los perfumes.</li>
+<li>La API ofrece servicios para listar, agregar y modificar datos de una base de datos.</li>
+<li>Los servicios permiten ordenar, filtrar y paginar los resultados.</li>
+<li>Se asegura que se manejen los códigos de estado HTTP adecuados (200, 201, 400, 404, 500).</li>
+<li>La autenticación de token está implementada en los servicios para modificaciones de datos (POST, PUT).</li>
 </ul>
   
-La relación entre estas tablas es de 1 a N , lo que significa que una marca puede tener más de un perfume, pero un perfume sólo puede pertenecer a una marca específica.
+# Funcionalidades
 
-## ✅ Acceso Administrador
-
+## ✅Acceso público
 <ul>
-<li><strong>Autenticación</strong>: Los administradores deben loguearse para acceder a las funcionalidades de administración de datos.</li>
-<li><strong>Actividades de la Adminitracion</strong>:Los administradores pueden agregar, editar y eliminar marcas y productos.</li>
-<li><strong>Cerrar Sesión</strong>:Los administradores pueden desloguearse del sistema.</li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 
-## ✅ Requisitos tecnicos
-
+## ✅Acceso administrador
 <ul>
-<li>El sistema está basado en el patrón MVC para separar la lógica del negocio, las vistas y el acceso a los datos.</li>
-<li>Las vistas se generan utilizando plantillas PHTML.</li>
-<li>El sitio utiliza URL semánticas.</li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 
-## ✅ Manual de uso. Carga de productos y marcas
-Una vez logueado, el administrador podra agregar tanto marcas como productos nuevos, siendo en el caso de los productos el rango minimo para la presentacion de 20 ml, por lo cual el entero a colocar debera ser un numero mayor o igual a 20.
-
-
+## ✅ Diagrama de datos 
 
 <img width="952" height="607" alt="Captura de pantalla 2025-09-23 194921" src="https://github.com/user-attachments/assets/a92a6dfe-b1f6-4c09-af7d-914411362a8e" />
 
