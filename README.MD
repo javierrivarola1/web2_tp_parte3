@@ -109,18 +109,23 @@ GET http://localhost/BACKUP/api/productos?cantidad=10&numeroDePagina=2
 Errores
 
 Ordenamiento inexistente
+
 GET http://localhost/BACKUP/api/productos?ordenarPor=color&modo=ASC
 
 Ordenamiento inexistente
+
 GET http://localhost/BACKUP/api/productos?ordenarPor=nombre&modo=RANDOM
 
 Caracteristica inválida
+
 GET http://localhost/BACKUP/api/productos?filtrarPor=color&filtro_valor=rojo
 
 Fuera de rango
+
 GET http://localhost/BACKUP/api/productos?cantidad=99999&numeroDePagina=1
 
 Producto erroneo
+
 GET http://localhost/BACKUP/api/productos/8
 
 
@@ -154,6 +159,7 @@ BODY raw:
     "precio": 35000,
     "presentacion": 80
 }
+
 
 
 
