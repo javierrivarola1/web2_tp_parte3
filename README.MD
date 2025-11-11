@@ -21,38 +21,76 @@ Las entidades principales de la base de datos son productos y marcas . Para cada
 <li> Se asegura que se manejen los códigos de estado HTTP adecuados (200, 201, 400, 404, 500).</li>
 <li> La autenticación de token está implementada en los servicios para modificaciones de datos (PUT).</li>
 </ul>
-  
-La relación entre estas tablas es de 1 a N , lo que significa que una marca puede tener más de un perfume, pero un perfume sólo puede pertenecer a una marca específica.
 
 ## ✅ Acceso Administrador
 
 <ul>
 <li Autenticación : Los administradores deben tener un jwt para acceder a las funcionalidades de administración de datos.</li>
-<li>Administración de MArcas : Los administradores pueden agregar y editar Marcas específicas. Cada Marca debe estar asociada a un producto.</li>
+<li>Administración de Marcas : Los administradores pueden agregar y editar Marcas específicas. Cada Marca debe estar asociada a un producto.</li>
 </ul>
 
-## ✅ Requisitos tecnicos
-
-<ul>
-<li>El sistema está basado en el patrón MVC para separar la lógica del negocio, las vistas y el acceso a los datos.</li>
-<li>Las vistas se generan utilizando plantillas PHTML.</li>
-<li>El sitio utiliza URL semánticas.</li>
-</ul>
-
-## ✅ Manual de uso. Carga de productos y marcas
-Una vez logueado, el administrador podra agregar tanto marcas como productos nuevos, siendo en el caso de los productos el rango minimo para la presentacion de 20 ml, por lo cual el entero a colocar debera ser un numero mayor o igual a 20.
-
-
+## ✅Diagrama de Datos
 
 <img width="952" height="607" alt="Captura de pantalla 2025-09-23 194921" src="https://github.com/user-attachments/assets/a92a6dfe-b1f6-4c09-af7d-914411362a8e" />
+
+## ✅Instalación y configurar
+
+Importar la base de datos : Importar el archivo db_perfumeria en PHPMyAdmin para cargar la estructura y datos iniciales.
+
+## ✅Administrador
+
+<ul>
+<li>Usuario: webadmin</li>
+<li>Contrasenia: admin</li>
+</ul>
+
+## ✅Ruta
+
+http://localhost/BACKUP/
+
+# ✅PRUEBAS DE ENDPOINTS.
+
+## 1 OBTENER TODOS LOS PRODUCTOS - Sin query params.
+
+GET http://localhost/BACKUP/api/productos
+
+## 2 OBTENER PRODUCTOS ORDENADOS
+
+## A / Nombre Ascendente.
+
+GET http://localhost/BACKUP/api/productos?ordenarPor=nombre&modo=ASC
+
+## B / Precio Descendente.
+
+GET http://localhost/BACKUP/api/productos?ordenarPor=precio&modo=DESC
+
+## C / Descripción Ascendente.
+
+GET http://localhost/BACKUP/api/productos?ordenarPor=descripcion&modo=ASC
+
+## D / Marca Ascendente.
+
+GET http://localhost/BACKUP/BACKUP/api/productos?ordenarPor=marca&modo=DESC
+
+TENER EN CUENTA EN ESTE ENDPOINT QUE LA MARCA ES NÚMERICA EN LA BASE DE DATOS.
+
+## E / Sexo Ascendente.
+
+GET http://localhost/BACKUP/api/productos?ordenarPor=sexo&modo=ASC
+
+## F / Stock Descendente.
+
+GET http://localhost/BACKUP/api/productos?ordenarPor=stock&modo=DESC
+
+## G / Stock Ascendente.
+
+GET http://localhost/BACKUP/api/productos?ordenarPor=precio&modo=ASC
+
+## 3 OBTENER PRODUCTOS FILTRADOS
 
 
 
 ENDPOINT DE PRUEBA
-1. Traer Todos los Productos (Sin Query Params)\ GET http://localhost/BACKUP/BACKUP/api/productos
-2. Traer Productos Ordenados\ Ordenar por nombre ascendente:\ GET http://localhost/BACKUP/api/productos?ordenarPor=nombre&modo=ASC
-Ordenar por precio descendente:\ GET http://localhost/BACKUP/api/productos?ordenarPor=precio&modo=DESC
-Otras opciones de ordenamiento:\ GET http://localhost/BACKUP/api/productos?ordenarPor=descripcion&modo=ASC\ GET http://localhost/BACKUP/BACKUP/api/productos?ordenarPor=marca&modo=DESC → (Para este último tener en cuenta que la marca es numérica en la BD)\ GET http://localhost/BACKUP/api/productos?ordenarPor=sexo&modo=ASC\ GET http://localhost/BACKUP/api/productos?ordenarPor=stock&modo=DESC\ GET http://localhost/BACKUP/api/productos?ordenarPor=presentacion&modo=ASC\ GET http://localhost/BACKUP/api/productos?ordenarPor=precio&modo=ASC
 3. Traer Productos Filtrados\ Filtrar por stock:\ GET http://localhost/BACKUP/api/productos?filtrarPor=stock&filtro_valor=1\ GET http://localhost/BACKUP/BACKUP/api/productos?filtrarPor=stock&filtro_valor=0
 4. Traer Productos Paginados\ Primera página con 5 productos:\ GET http://localhost/BACKUP/api/productos?cantidad=5&numeroDePagina=1
 Segunda página con 10 productos:\ GET http://localhost/BACKUP/api/productos?cantidad=10&numeroDePagina=2
@@ -84,6 +122,7 @@ BODY raw:
     "precio": 35000,
     "presentacion": 80
 }
+
 
 
 
