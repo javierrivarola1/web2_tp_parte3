@@ -27,9 +27,8 @@ La relación entre estas tablas es de 1 a N , lo que significa que una marca pue
 ## ✅ Acceso Administrador
 
 <ul>
-<li Los administradores deben loguearse para acceder a las funcionalidades de administración de datos.</li>
-<li>Los administradores pueden agregar, editar y eliminar marcas y productos.</li>
-<li><Los administradores pueden desloguearse del sistema.</li>
+<li Autenticación : Los administradores deben tener un jwt para acceder a las funcionalidades de administración de datos.</li>
+<li>Administración de MArcas : Los administradores pueden agregar y editar Marcas específicas. Cada Marca debe estar asociada a un producto.</li>
 </ul>
 
 ## ✅ Requisitos tecnicos
@@ -85,5 +84,6 @@ BODY raw:
     "precio": 35000,
     "presentacion": 80
 }
+
 
 
