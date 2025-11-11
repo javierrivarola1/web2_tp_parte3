@@ -22,9 +22,3 @@
 
 // Utilizar apache_request_headers(): En Apache, 
 // Una vez obtenido, el valor de HTTP_AUTHORIZATION puede utilizarse para validar y autenticar las solicitudes entrantes en tu aplicación.
-
-
-
-
-
-

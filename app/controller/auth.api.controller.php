@@ -34,13 +34,13 @@ class AuthApiController
         // Buscamos El usuario en la base
         $user = $this->model->getUserByUsername($user_pass[0]);
         // Chequeamos la contraseña
-        if ($user == null || !password_verify($user_pass[1], $user->password)) {
+        if ($user == null || !password_verify($user_pass[1], $user->contrasenia)) {
             return $this->view->response("Credenciales incorrectas", 400);
         }
         // Generamos el token
         $token = createJWT(array(
-            'sub' => $user->id_user,
-            'username' => $user->username,
+            'sub' => $user->id,
+            'username' => $user->usuario,
             'iat' => time(),
             'exp' => time() + 3600,
             'Saludo' => 'Hola'

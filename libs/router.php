@@ -1,7 +1,7 @@
 <?php
 
 require_once './libs/request.php';
-require_once './libs/respuesta.php'; // Requiere la clase Respuesta
+require_once './libs/respuesta.php';
 
 class Route {
     private $url;
@@ -72,9 +72,9 @@ class Router {
             }
         }
         //Si ninguna ruta coincide con el pedido y se configuró ruta por defecto.
-        if ($this->defaultRoute != null){
-            $this->defaultRoute->run($this->request, $this->response);
-        }
+        if ($this->defaultRoute != null)
+            // $this->defaultRoute->run($this->request, $this->response);
+            $route->run($this->request, $this->response);
     }
 
     public function addMiddleware($middleware) {
@@ -88,5 +88,4 @@ class Router {
     public function setDefaultRoute($controller, $method) {
         $this->defaultRoute = new Route("", "", $controller, $method);
     }
-
 }

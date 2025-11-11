@@ -1,8 +1,8 @@
 <?php
     class Request {
-        public $body = null; # { zona: 'centro', descripcion: 'hermosa propiedad' }
-        public $params = null; # /api/propiedad/:id
-        public $query = null; # ?estado=disponible
+        public $body = null; 
+        public $params = null; 
+        public $query = null; 
 
         public function __construct() {
             try {

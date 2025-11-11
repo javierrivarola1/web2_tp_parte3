@@ -17,7 +17,7 @@ class ProductoModel extends Autodeploy
     }
 
     function traerTodosFiltrados($filtrarPor, $filtro_valor){
-         $sql ="SELECT * FROM producto ORDER BY $filtrarPor = ?"; //Metodo para traer productos (Listado de ítems: Se debe poder visualizar todos los ítems cargados)
+        $sql ="SELECT * FROM producto WHERE  $filtrarPor = ?"; //Metodo para traer productos (Listado de ítems: Se debe poder visualizar todos los ítems cargados)
         $query = $this->db->prepare($sql);
         $query->execute([$filtro_valor]);
         $arrayProducto = $query->fetchAll(PDO::FETCH_OBJ);
@@ -28,7 +28,7 @@ class ProductoModel extends Autodeploy
     function countProductos(){
         $query = $this->db->prepare("SELECT COUNT(*) as total FROM producto"); 
         $query->execute();
-        $total = $query->fetch(PDO::FETCH_OBJ['total_productos']); 
+        $total = $query->fetch(PDO::FETCH_ASSOC)['total']; 
         return $total;
     }
 
