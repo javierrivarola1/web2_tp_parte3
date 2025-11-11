@@ -48,13 +48,13 @@ Importar la base de datos : Importar el archivo db_perfumeria en PHPMyAdmin para
 
 http://localhost/BACKUP/
 
-# ✅PRUEBAS DE ENDPOINTS.
+# PRUEBAS DE ENDPOINTS.
 
-## 1 OBTENER TODOS LOS PRODUCTOS - Sin query params.
+## ✅1 OBTENER TODOS LOS PRODUCTOS - Sin query params.
 
 GET http://localhost/BACKUP/api/productos
 
-## 2 OBTENER PRODUCTOS ORDENADOS
+## ✅2 OBTENER PRODUCTOS ORDENADOS
 
 ## A / Nombre Ascendente.
 
@@ -86,21 +86,53 @@ GET http://localhost/BACKUP/api/productos?ordenarPor=stock&modo=DESC
 
 GET http://localhost/BACKUP/api/productos?ordenarPor=precio&modo=ASC
 
-## 3 OBTENER PRODUCTOS FILTRADOS
+## ✅3 OBTENER PRODUCTOS FILTRADOS
 
+Filtrar por Stock.
+
+GET http://localhost/BACKUP/api/productos?filtrarPor=stock&filtro_valor=1
+
+GET http://localhost/BACKUP/BACKUP/api/productos?filtrarPor=stock&filtro_valor=0
+
+## ✅4 OBTENER PRODUCTOS PAGINADOS
+
+Primera página con 5 productos.
+
+GET http://localhost/BACKUP/api/productos?cantidad=5&numeroDePagina=1
+
+Segunda página con 10 productos.
+
+GET http://localhost/BACKUP/api/productos?cantidad=10&numeroDePagina=2
+
+## ✅5 OBTENER PRODUCTOS PAGINADOS
+
+Errores
+
+Ordenamiento inexistente
+GET http://localhost/BACKUP/api/productos?ordenarPor=color&modo=ASC
+
+Ordenamiento inexistente
+GET http://localhost/BACKUP/api/productos?ordenarPor=nombre&modo=RANDOM
+
+Caracteristica inválida
+GET http://localhost/BACKUP/api/productos?filtrarPor=color&filtro_valor=rojo
+
+Fuera de rango
+GET http://localhost/BACKUP/api/productos?cantidad=99999&numeroDePagina=1
+
+Producto erroneo
+GET http://localhost/BACKUP/api/productos/8
 
 
 ENDPOINT DE PRUEBA
-3. Traer Productos Filtrados\ Filtrar por stock:\ GET http://localhost/BACKUP/api/productos?filtrarPor=stock&filtro_valor=1\ GET http://localhost/BACKUP/BACKUP/api/productos?filtrarPor=stock&filtro_valor=0
-4. Traer Productos Paginados\ Primera página con 5 productos:\ GET http://localhost/BACKUP/api/productos?cantidad=5&numeroDePagina=1
-Segunda página con 10 productos:\ GET http://localhost/BACKUP/api/productos?cantidad=10&numeroDePagina=2
+
 5. Endpoints con Errores (Para Probar Validaciones)\ GET http://localhost/BACKUP/api/productos?ordenarPor=color&modo=ASC
 Modo de ordenamiento inválido:\ GET http://localhost/BACKUP/api/productos?ordenarPor=nombre&modo=RANDOM
 Filtrar por característica no disponible:\ GET http://localhost/BACKUP/api/productos?filtrarPor=color&filtro_valor=rojo
 Cantidad fuera de rango:\ GET http://localhost/BACKUP/api/productos?cantidad=99999&numeroDePagina=1
 Traer un solo producto:\ http://localhost/BACKUP/api/productos/8
 ________________________________________
-Update: Pruebas de Validación (Errores esperados)\ Error: Falta el campo nombre\ PUT http://localhost/BACKUP/api/productos/8\ BODY raw:
+Update: Pruebas de Validación (Errores esperados)\ Error: Falta el campo nombre\ PUT http://localhost/BACKUP/api/productos/8 BODY raw:
 {
     "descripcion": "Solo descripción",
     "marca": 1,
@@ -122,6 +154,7 @@ BODY raw:
     "precio": 35000,
     "presentacion": 80
 }
+
 
 
 
