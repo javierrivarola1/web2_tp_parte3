@@ -25,7 +25,7 @@ Las entidades principales de la base de datos son productos y marcas . Para cada
 ## ✅ Acceso Administrador
 
 <ul>
-<li Autenticación : Los administradores deben tener un jwt para acceder a las funcionalidades de administración de datos.</li>
+<li> Autenticación : Los administradores deben tener un jwt para acceder a las funcionalidades de administración de datos.</li>
 <li>Administración de Marcas : Los administradores pueden agregar y editar Marcas específicas. Cada Marca debe estar asociada a un producto.</li>
 </ul>
 
@@ -174,6 +174,7 @@ BODY raw:
 </ol>
 
 PUT http://localhost/BACKUP/api/usuarios/token
+
 
 
 
