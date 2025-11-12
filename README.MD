@@ -40,8 +40,8 @@ Importar la base de datos : Importar el archivo db_perfumeria en PHPMyAdmin para
 ## ✅Administrador
 
 <ul>
-<li>Usuario: webadmin</li>
-<li>Contrasenia: admin</li>
+<li>Usuario:admin</li>
+<li>Contrasenia: webadmin</li>
 </ul>
 
 ## ✅Ruta
@@ -128,16 +128,13 @@ Producto erroneo
 
 GET http://localhost/BACKUP/api/productos/8
 
+## ✅6 PUT - UPDATE.
 
-ENDPOINT DE PRUEBA
+Pruebas de Validación (Errores esperados) Error: Falta el campo nombre
 
-5. Endpoints con Errores (Para Probar Validaciones)\ GET http://localhost/BACKUP/api/productos?ordenarPor=color&modo=ASC
-Modo de ordenamiento inválido:\ GET http://localhost/BACKUP/api/productos?ordenarPor=nombre&modo=RANDOM
-Filtrar por característica no disponible:\ GET http://localhost/BACKUP/api/productos?filtrarPor=color&filtro_valor=rojo
-Cantidad fuera de rango:\ GET http://localhost/BACKUP/api/productos?cantidad=99999&numeroDePagina=1
-Traer un solo producto:\ http://localhost/BACKUP/api/productos/8
-________________________________________
-Update: Pruebas de Validación (Errores esperados)\ Error: Falta el campo nombre\ PUT http://localhost/BACKUP/api/productos/8 BODY raw:
+PUT http://localhost/BACKUP/api/productos/8 BODY raw:
+
+BODY raw:
 {
     "descripcion": "Solo descripción",
     "marca": 1,
@@ -146,9 +143,15 @@ Update: Pruebas de Validación (Errores esperados)\ Error: Falta el campo nombre
     "precio": 10000,
     "presentacion": 100
 }
-Get token:\ Información a poner en Authorization basic:\ user: admin\ password: webadmin\ PUT http://localhost/BACKUP/api/usuarios/token
-________________________________________
-Update: Correcto\ PUT http://localhost/BACKUP/api/productos/8\ Información a poner en Authorization bearer token:\ El token obtenido al hacer Get token
+
+Update: Correcto
+
+Información a poner en Authorization bearer Token.
+
+Token obtenido, al hacer Get token.
+
+PUT http://localhost/BACKUP/api/productos/8
+
 BODY raw:
 {
     "nombre": "212 VIP modificado",
@@ -159,6 +162,23 @@ BODY raw:
     "precio": 35000,
     "presentacion": 80
 }
+
+
+
+## ✅7 TOKEN.
+
+<ol>
+<li>Información a poner en Authorization Basic</li>
+<li>Usuario:admin</li>
+<li>Contrasenia: webadmin</li>
+</ol>
+
+PUT http://localhost/BACKUP/api/usuarios/token
+
+
+
+
+
 
 
 
