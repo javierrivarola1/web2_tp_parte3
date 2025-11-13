@@ -1,5 +1,4 @@
 # WEB-II-Trabajo-Práctico - Ecommerce Perfumes - PARTE 2.
-Proyecto creado para la cátedra de Web2, Facultad UNICEN, carrera TUDAI.
 
 ## 📋 Numero de grupo: 
 48
@@ -70,7 +69,7 @@ GET http://localhost/BACKUP/api/productos?ordenarPor=descripcion&modo=ASC
 
 ## D / Marca Ascendente.
 
-GET http://localhost/BACKUP/BACKUP/api/productos?ordenarPor=marca&modo=DESC
+GET http://localhost/BACKUP/api/productos?ordenarPor=marca&modo=DESC
 
 TENER EN CUENTA EN ESTE ENDPOINT QUE LA MARCA ES NÚMERICA EN LA BASE DE DATOS.
 
@@ -174,6 +173,7 @@ BODY raw:
 </ol>
 
 PUT http://localhost/BACKUP/api/usuarios/token
+
 
 
 
