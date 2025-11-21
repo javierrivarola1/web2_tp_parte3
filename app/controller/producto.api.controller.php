@@ -164,7 +164,7 @@ class ProductoApiController
             // mando la producto y la marca a la vista 
             return $this->view->response($response);
         } else {
-            return $this->view->response('Error: No se encontró la producto', 404);
+            return $this->view->response('Error: No se encontró el producto', 404);
         }
     }
 
@@ -274,5 +274,43 @@ class ProductoApiController
         }
         return $valido;
     }
+
+    public function create($req,$res) {
+        if(!$res->user){
+            return $this->view->response("No tiene permisos para agregar productos", 401);
+        }
+
+        $required = ['nombre', 'descripcion', 'marca', 'sexo', 'stock', 'precio', 'presentacion'];
+        foreach ($required as $field) {
+            if (!isset($req->body->$field)) {
+                return $this->view->response("Falta el campo '$field'", 400);
+            }
+        }
+        $nombre = $req->body->nombre;
+        $descripcion = $req->body->descripcion;
+        $marcaId = $req->body->marca;
+        $sexo = $req->body->sexo;
+        $stock = $req->body->stock;
+        $precio = $req->body->precio;
+        $presentacion = $req->body->presentacion;
+
+         // Se verifica si existe la marca
+        $marca = $this->marcaModel->getMarcaById($marcaId);
+        if (empty($marca)) {
+            $this->view->response("La marca con el id=$marcaId no existe", 422);
+            return;
+        }
+
+
+        $id = $this->model->agregar($nombre , $descripcion, $marcaId, $sexo, $stock,$precio,$presentacion);
+         if ($id)
+            $this->view->response("Producto creado con el id = $id", 201);
+        else
+            $this->view->response("No se puedo crear el producto", 422);
+       
+
+
+}
+
 }
 

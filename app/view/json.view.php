@@ -16,6 +16,7 @@
                 400 => "Solicitud Incorrecta",
                 401 => "Acceso No Autorizado",
                 404 => "Recurso No Encontrado",
+                422 => 'Unprocessable Entity',
                 500 => "Error en el Servidor"
             );
             if(!isset($status[$code])) {
