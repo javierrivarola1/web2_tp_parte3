@@ -162,9 +162,76 @@ BODY raw:
     "presentacion": 80
 }
 
+## ✅7 POST - CREATE
+Pruebas de Validación (Errores esperados)
+
+Error: Falta el campo nombre
+
+POST
+http://localhost/BACKUP/api/productos
+BODY raw (JSON):
+
+{
+    "descripcion": "Perfume sin nombre",
+    "marca": 1,
+    "sexo": "F",
+    "stock": 10,
+    "precio": 20000,
+    "presentacion": 100
+}
 
 
-## ✅7 TOKEN.
+Error: Falta el campo descripcion
+
+POST
+http://localhost/BACKUP/api/productos
+BODY raw (JSON):
+
+{
+    "nombre": "212 VIP",
+    "marca": 1,
+    "sexo": "F",
+    "stock": 10,
+    "precio": 20000,
+    "presentacion": 100
+}
+
+
+Error: Precio inválido
+
+POST
+http://localhost/BACKUP/api/productos
+BODY raw (JSON):
+
+{
+    "nombre": "212 VIP",
+    "descripcion": "Fragancia oriental vainilla",
+    "marca": 1,
+    "sexo": "F",
+    "stock": 10,
+    "precio": -10,
+    "presentacion": 100
+}
+
+⭐ POST Correcto - CREATE
+
+Authorization: Bearer Token (obtenido al hacer Get Token)
+
+POST
+http://localhost/BACKUP/api/productos
+BODY raw (JSON):
+
+{
+    "nombre": "212 VIP",
+    "descripcion": "212 VIP de Carolina Herrera es una fragancia oriental vainilla",
+    "marca": 1,
+    "sexo": "F",
+    "stock": 5,
+    "precio": 35000,
+    "presentacion": 80
+}
+
+## ✅8 TOKEN.
 
 <ol>
 <li>Información a poner en Authorization Basic</li>
@@ -173,6 +240,7 @@ BODY raw:
 </ol>
 
 PUT http://localhost/BACKUP/api/usuarios/token
+
 
 
 
